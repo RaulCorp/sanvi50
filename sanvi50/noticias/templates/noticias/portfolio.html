@@ -1,0 +1,32 @@
+{% extends 'core/base.html'  %}
+
+{% block title %}Noticias{% endblock%}
+
+{% block background %}{% load static %}{% static 'core/img/home-bg.jpg' %}{% endblock %}
+
+{%block headers%}
+<h1>COLEGIO SAN VIATOR</h1>
+<span class="subheading">Noticias 50 aniversario</span>
+{%endblock%}
+
+
+{% block content%}
+
+	<!-- Noticia -->
+	<p><a href="http://google.com">Más información</a></p>
+	{% for noticia in noticias %}
+
+		<div class="row project">  	
+			<div class="col-lg-3 col-md-4 offset-lg-1">
+				<img class="img-fluid" src="{{noticia.image.url}}" alt="">
+			</div>
+			<div class="col-lg-7 col-md-8">
+				<h2 class="section-heading title">{{noticia.title}}</h2>   
+				<p>{{noticia.description}}</p>
+				<p><a href="http://google.com">Más información</a></p>
+			</div>
+		</div>
+
+	{% endfor %}
+
+{% endblock%}
